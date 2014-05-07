@@ -24,7 +24,7 @@ public class AESEncrypt {
 		return encryptedValue;
 	}
 
-	// Takes BASE64 encrypted value and decrypt it its original plain text value.   
+	// Takes BASE64 encrypted value and decrypt to its original plain text value.   
 	public String decrypt(String encryptedText) throws Exception {
 		Key key = generateKey();
 		Cipher c = Cipher.getInstance(ALGORITHM);
@@ -35,6 +35,7 @@ public class AESEncrypt {
 		return decryptedValue;
 	}
 
+	// Generates a secret key for AES algorithm with a given key.
 	private static Key generateKey() throws Exception {
 		Key key = new SecretKeySpec(keyValue, ALGORITHM);
 		return key;
